@@ -22,14 +22,12 @@ public class UserController {
     public String listUsers(ModelMap model) {
         model.addAttribute("user", new User());
         model.addAttribute("users", userRepository.findAll());
-        return "user/index";
+        return "userViews/index";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String addUser(@ModelAttribute("user") User user, BindingResult result) {
-
         userRepository.save(user);
-
         return "redirect:/";
     }
 
