@@ -34,7 +34,7 @@ public class ProductController {
 
         productRepository.save(product);
 
-        return "redirect:/productViews/index";
+        return "redirect:/product";
     }
 
     @RequestMapping("/product/delete/{productId}")
@@ -42,7 +42,7 @@ public class ProductController {
 
         productRepository.delete(productRepository.findOne(productId));
 
-        return "redirect:/productViews/index";
+        return "redirect:/product";
     }
 
 }
