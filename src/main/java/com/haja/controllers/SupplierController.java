@@ -28,7 +28,7 @@ public class SupplierController {
     public String listSupplier(ModelMap model) {
         model.addAttribute("supplier", new Supplier());
         model.addAttribute("suppliers", supplierRepository.findAll());
-        return "suppliers";
+        return "supplierViews/index";
     }
 
     @RequestMapping(value = "/supplier/add", method = RequestMethod.POST)

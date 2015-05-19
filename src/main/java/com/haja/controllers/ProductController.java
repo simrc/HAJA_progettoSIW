@@ -20,13 +20,13 @@ public class ProductController {
     @RequestMapping(value = "/product", method = RequestMethod.GET)
     public String listProduct(ModelMap model) {
         model.addAttribute("products", productRepository.findAll());
-        return "products";
+        return "productViews/index";
     }
 
     @RequestMapping(value = "/product/add", method = RequestMethod.GET)
     public String addProduct(ModelMap model) {
         model.addAttribute("product", new Product());
-        return "addProduct";
+        return "productViews/add";
     }
 
     @RequestMapping(value = "/product/add", method = RequestMethod.POST)
@@ -34,7 +34,7 @@ public class ProductController {
 
         productRepository.save(product);
 
-        return "redirect:/product";
+        return "redirect:/productViews/index";
     }
 
     @RequestMapping("/product/delete/{productId}")
@@ -42,7 +42,7 @@ public class ProductController {
 
         productRepository.delete(productRepository.findOne(productId));
 
-        return "redirect:/product";
+        return "redirect:/productViews/index";
     }
 
 }
