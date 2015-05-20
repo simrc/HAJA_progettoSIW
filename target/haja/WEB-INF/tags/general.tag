@@ -1,7 +1,7 @@
 <!doctype html>
 <%@attribute name="title" fragment="true" required="true" %>
 <%@attribute name="head" fragment="true" %>
-<%@attribute name="yeld" fragment="true" required="true" %>
+<%@attribute name="yield" fragment="true" required="true" %>
 <%@attribute name="footer" fragment="true" %>
 
 <html>
@@ -21,7 +21,7 @@
         <li><a href="/product">Lista prodotti</a></li>
         <li><a href="/product/add">Aggiungi prodotto</a></li>
     </ul>
-    <jsp:invoke fragment="yeld"/>
+    <jsp:invoke fragment="yield"/>
     <jsp:invoke fragment="footer"/>
 </body>
 </html>

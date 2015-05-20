@@ -3,9 +3,9 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
-<t:layout>
+<t:general>
     <jsp:attribute name="title">I nostri Fornitori</jsp:attribute>
-    <jsp:attribute name="yeld">
+    <jsp:attribute name="yield">
         <form:form method="post" action="/supplier/add" commandName="supplier" class="form">
 
             <form:label path="name">Nome:</form:label>
@@ -26,14 +26,14 @@
         </form:form>
 
       <c:if test="${!empty suppliers}">
-          <h3>Users</h3>
-          <table class="table table-bordered table-striped">
+          <h3>Fornitori</h3>
+          <table class="table table-bordered table-striped"> <!--intabellamento-->
               <thead>
               <tr>
-                  <th>Name</th>
+                  <th>Fornitore</th>
                   <th>Iva</th>
                   <th>Email</th>
-                  <th>Phone Number</th>
+                  <th>Numero di telefono</th>
                   <th>&nbsp;</th>
               </tr>
               </thead>
@@ -46,7 +46,7 @@
                       <td>${supplier.phone}</td>
 
                       <td>
-                          <form action="/supplier/delete/${supplier.id}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form>
+                          <form action="/supplier/delete/${supplier.id}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Rimuovi"/></form>
                       </td>
                   </tr>
               </c:forEach>
@@ -56,4 +56,4 @@
 
     </jsp:attribute>
 
-</t:layout>
+</t:general>

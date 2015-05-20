@@ -3,28 +3,27 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
-<t:layout>
+<t:general>
 
 
-    <jsp:attribute name="title">Aggiungi prodotto</jsp:attribute>
-
-    <jsp:attribute name="yeld">
+    <jsp:attribute name="title">Catalogo Prodotti di Haja</jsp:attribute>
+    <jsp:attribute name="yield">
 
         <form:form method="post" action="/product/add" commandName="product">
 
-            <form:label path="name">Name:</form:label>
+            <form:label path="name">Nome:</form:label>
             <form:input path="name"/>
 
-            <form:label path="description">Description:</form:label>
+            <form:label path="description">Descrizione:</form:label>
             <form:input path="description"/>
 
-            <form:label path="price">Price:</form:label>
+            <form:label path="price">Prezzo:</form:label>
             <form:input path="price"/>
 
-            <input type="submit" value="insert">
+            <input type="submit" value="inserisci">
 
         </form:form>
 
     </jsp:attribute>
 
-</t:layout>
+</t:general>

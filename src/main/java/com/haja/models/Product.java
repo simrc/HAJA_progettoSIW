@@ -1,6 +1,7 @@
 package com.haja.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 
 @Entity
 public class Product {
@@ -17,6 +18,7 @@ public class Product {
     private String description;
 
     @Basic
+    @Min(value = 0)                 //da rivedere
     @Column(unique = true , nullable = false)
     private Double price;
 

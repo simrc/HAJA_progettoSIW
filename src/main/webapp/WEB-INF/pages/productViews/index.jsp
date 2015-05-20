@@ -10,20 +10,19 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
-<t:layout>
+<t:general>
 
 
   <jsp:attribute name="title">Catalogo Prodotti</jsp:attribute>
 
 
-    <jsp:attribute name="yeld">
+    <jsp:attribute name="yield">
 
         <c:if test="${!empty products}">
           <h3>Catalogo Prodotti</h3>
           <table>
             <thead>
             <tr>
-              <th>Id</th>
               <th>Nome</th>
               <th>Descrizione Prodotto</th>
               <th>Prezzo</th>
@@ -32,11 +31,11 @@
             <tbody>
             <c:forEach items="${products}" var="product">
               <tr>
-                <td>${product.id}</td>
+                <td>${product.name}</td>
                 <td>${product.description}</td>
                 <td>&euro; ${product.price}</td>
                 <td>
-                  <form action="/product/delete/${product.id}" method="post"><input type="submit" value="Delete"/></form>
+                  <form action="/product/delete/${product.id}" method="post"><input type="submit" value="Rimuovi"/></form>
                 </td>
               </tr>
             </c:forEach>
@@ -46,4 +45,4 @@
 
     </jsp:attribute>
 
-</t:layout>
+</t:general>
