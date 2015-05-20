@@ -42,6 +42,7 @@
                     <th>Nome</th>
                     <th>Cognome</th>
                     <th>Email</th>
+                    <th>Iscritto/a dal</th>
                     <th>&nbsp;</th>
                 </tr>
                 </thead>
@@ -51,6 +52,7 @@
                         <td>${user.firstName} </td>
                         <td>${user.lastName} </td>
                         <td>${user.email}</td>
+                        <td>${user.dataIscrizione}</td>
                         <td>
                             <form action="delete/${user.id}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Rimuovi"/></form>
                         </td>

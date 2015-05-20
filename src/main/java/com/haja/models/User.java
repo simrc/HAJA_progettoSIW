@@ -1,6 +1,7 @@
 package com.haja.models;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class User {
@@ -23,6 +24,21 @@ public class User {
 
     @OneToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
     private Address address;
+
+
+    @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
+    private Date dataIscrizione;
+
+
+    public Date getDataIscrizione() {
+        return dataIscrizione;
+    }
+
+    public void setDataIscrizione(Date dataIscrizione) {
+        this.dataIscrizione = dataIscrizione;
+    }
+
 
     public Long getId() {
         return id;

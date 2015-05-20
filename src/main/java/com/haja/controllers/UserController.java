@@ -27,6 +27,7 @@ public class UserController {
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String addUser(@ModelAttribute("user") User user, BindingResult result) {
+        user.setDataIscrizione(new java.util.Date());
         userRepository.save(user);
         return "redirect:/";
     }
