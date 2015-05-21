@@ -1,4 +1,3 @@
-__MACOSSX
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -31,3 +30,4 @@ gen
 
 src/main/resources/META-INF/persistence.xml
 pom.xml
+**/.DS_Store
