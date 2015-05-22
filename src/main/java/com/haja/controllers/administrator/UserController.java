@@ -1,5 +1,5 @@
 
-package com.haja.controllers;
+package com.haja.controllers.administrator;
 
 import com.haja.models.User;
 import com.haja.models.UserRepository;
@@ -13,31 +13,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
+@RequestMapping(value="/administrator/user")
 public class UserController {
 
     @Autowired
     private UserRepository userRepository;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public String listUsers(ModelMap model) {
         model.addAttribute("user", new User());
         model.addAttribute("users", userRepository.findAll());
         return "userViews/index";
+
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String addUser(@ModelAttribute("user") User user, BindingResult result) {
         user.setDataIscrizione(new java.util.Date());
         userRepository.save(user);
-        return "redirect:/";
+        return "redirect:/administrator/user";
     }
 
     @RequestMapping("/delete/{userId}")
     public String deleteUser(@PathVariable("userId") Long userId) {
 
         userRepository.delete(userRepository.findOne(userId));
-
-        return "redirect:/";
+        return "redirect:/administrator/user";
     }
 
 }

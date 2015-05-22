@@ -7,11 +7,9 @@
 
 
     <jsp:attribute name="title">Lista degli utenti</jsp:attribute>
-
-
     <jsp:attribute name="yield">
 
-        <form:form method="post" action="add" commandName="user" class="form-horizontal">
+        <form:form method="post" action="/administrator/user/add" commandName="user" class="form">
             <form:label path="firstName">Nome:</form:label>
             <form:input path="firstName"/>
 
@@ -30,7 +28,7 @@
             <form:label path="address.address_line">Indirizzo:</form:label>
             <form:input path="address.address_line"/>
 
-            <input type="submit" value="send">
+            <input type="submit" value="aggiungi">
 
         </form:form>
 
@@ -54,7 +52,7 @@
                         <td>${user.email}</td>
                         <td>${user.dataIscrizione}</td>
                         <td>
-                            <form action="delete/${user.id}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Rimuovi"/></form>
+                            <form action="/administrator/user/delete/${user.id}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Rimuovi"/></form>
                         </td>
                     </tr>
                 </c:forEach>

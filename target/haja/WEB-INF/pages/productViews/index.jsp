@@ -14,9 +14,7 @@
 
 
   <jsp:attribute name="title">Catalogo Prodotti</jsp:attribute>
-
-
-    <jsp:attribute name="yield">
+  <jsp:attribute name="yield">
 
         <c:if test="${!empty products}">
           <h3>Catalogo Prodotti</h3>
@@ -35,7 +33,7 @@
                 <td>${product.description}</td>
                 <td>&euro; ${product.price}</td>
                 <td>
-                  <form action="/product/delete/${product.id}" method="post"><input type="submit" value="Rimuovi"/></form>
+                  <form action="/administrator/product/delete/${product.id}" method="post"><input type="submit" value="Rimuovi"/></form>
                 </td>
               </tr>
             </c:forEach>

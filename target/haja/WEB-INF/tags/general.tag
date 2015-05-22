@@ -16,10 +16,10 @@
 
 <body>
     <ul>
-        <li><a href="/">Lista Utenti</a></li>
-        <li><a href="/supplier">Lista fornitori</a></li>
-        <li><a href="/product">Lista prodotti</a></li>
-        <li><a href="/product/add">Aggiungi prodotto</a></li>
+        <li><a href="/">Welcome!</a></li>
+        <li><a href="/administrator/supplier">Fornitori</a></li>
+        <li><a href="/administrator/user">Utenti</a></li>
+        <li><a href="/administrator/product">I nostri prodotti</a></li>
     </ul>
     <jsp:invoke fragment="yield"/>
     <jsp:invoke fragment="footer"/>

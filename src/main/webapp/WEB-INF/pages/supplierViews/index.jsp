@@ -6,7 +6,7 @@
 <t:general>
     <jsp:attribute name="title">I nostri Fornitori</jsp:attribute>
     <jsp:attribute name="yield">
-        <form:form method="post" action="/supplier/add" commandName="supplier" class="form">
+        <form:form method="post" action="/administrator/supplier/add" commandName="supplier" class="form">
 
             <form:label path="name">Nome:</form:label>
             <form:input path="name"/>
@@ -21,7 +21,7 @@
             <form:input path="phone"/>
 
 
-            <input type="submit" value="add supplier">
+            <input type="submit" value="aggiungi fornitore">
 
         </form:form>
 
@@ -46,7 +46,7 @@
                       <td>${supplier.phone}</td>
 
                       <td>
-                          <form action="/supplier/delete/${supplier.id}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Rimuovi"/></form>
+                          <form action="/administrator/supplier/delete/${supplier.id}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Rimuovi"/></form>
                       </td>
                   </tr>
               </c:forEach>
