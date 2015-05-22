@@ -3,6 +3,7 @@ package com.haja.models;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 
+@NamedQuery(name = "Product.findAvailableProducts", query = "SELECT p FROM Product p WHERE p.quantity > 0")
 @Entity
 public class Product {
 
@@ -21,6 +22,10 @@ public class Product {
     @Min(value = 0)                 //da rivedere
     @Column(unique = true , nullable = false)
     private Double price;
+
+    @Basic
+    private Integer quantity;
+
 
     public Long getId() {
         return id;
@@ -52,6 +57,14 @@ public class Product {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
 }

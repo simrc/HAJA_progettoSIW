@@ -27,6 +27,9 @@
           <form:label path="price">Prezzo:</form:label>
           <form:input path="price"/>
 
+          <form:label path="quantity">Quanit&#224</form:label>
+          <form:input path="quantity"/>
+
           <input type="submit" value="inserisci">
 
         </form:form>
@@ -39,6 +42,7 @@
           <th>Nome</th>
           <th>Descrizione Prodotto</th>
           <th>Prezzo</th>
+          <th>Disponibilit&agrave</th>
         </tr>
         </thead>
         <tbody>
@@ -47,6 +51,7 @@
             <td>${product.name}</td>
             <td>${product.description}</td>
             <td>&euro; ${product.price}</td>
+            <td>${product.quantity}</td>
             <td>
               <form action="/administrator/product/delete/${product.id}" method="post"><input type="submit" value="Rimuovi"/></form>
             </td>
