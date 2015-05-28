@@ -9,29 +9,6 @@
     <jsp:attribute name="title">Lista degli utenti</jsp:attribute>
     <jsp:attribute name="yield">
 
-        <form:form method="post" action="/administrator/user/add" commandName="user" class="form">
-            <form:label path="firstName">Nome:</form:label>
-            <form:input path="firstName"/>
-
-            <form:label path="lastName">Cognome:</form:label>
-            <form:input path="lastName"/>
-
-            <form:label path="email">Email:</form:label>
-            <form:input path="email"/>
-
-            <form:label path="address.city">Citt&#224:</form:label>
-            <form:input path="address.city"/>
-
-            <form:label path="address.cap">Cap:</form:label>
-            <form:input path="address.cap"/>
-
-            <form:label path="address.address_line">Indirizzo:</form:label>
-            <form:input path="address.address_line"/>
-
-            <input type="submit" value="aggiungi">
-
-        </form:form>
-
         <c:if test="${!empty users}">
             <h3>Users</h3>
             <table class="table table-bordered table-striped"> <!--intabellamento-->
@@ -39,8 +16,10 @@
                 <tr>
                     <th>Nome</th>
                     <th>Cognome</th>
+                    <th>Nickname</th>
                     <th>Email</th>
                     <th>Iscritto/a dal</th>
+                    <th>Nato/a il</th>
                     <th>&nbsp;</th>
                 </tr>
                 </thead>
@@ -49,8 +28,10 @@
                     <tr>
                         <td>${user.firstName} </td>
                         <td>${user.lastName} </td>
+                        <td>${user.nickname}</td>
                         <td>${user.email}</td>
-                        <td>${user.dataIscrizione}</td>
+                        <td>${user.registrationDate}</td>
+                        <td>${user.birthDate} dd/MM/yyyy</td>
                         <td>
                             <form action="/administrator/user/delete/${user.id}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Rimuovi"/></form>
                         </td>

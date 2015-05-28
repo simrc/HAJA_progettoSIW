@@ -1,3 +1,4 @@
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!doctype html>
 <%@attribute name="title" fragment="true" required="true" %>
 <%@attribute name="head" fragment="true" %>
@@ -15,12 +16,31 @@
 </head>
 
 <body>
-    <ul>
-        <li><a href="/">Welcome!</a></li>
-        <li><a href="/administrator/supplier">Fornitori</a></li>
-        <li><a href="/administrator/user">Utenti</a></li>
-        <li><a href="/administrator/product">I nostri prodotti</a></li>
-    </ul>
+    <nav id="main-nav">
+        <ul>
+            <sec:authorize access="hasRole('ROLE_ADMIN')">
+                <li><a href="/">Welcome!</a></li>
+                <li><a href="/administrator/supplier">Fornitori</a></li>
+                <li><a href="/administrator/user">Utenti</a></li>
+                <li><a href="/administrator/product">I nostri prodotti</a></li>
+            </sec:authorize>
+        </ul>
+    </nav>
+
+
+    <nav id="seconday-nav">
+        <ul>
+            <li><a title="registrati" href="/signup">registrati</a></li>
+            <sec:authorize access="isAnonymous()">
+                <li><a title="login" href="/login">login</a></li>
+            </sec:authorize>
+
+            <sec:authorize access="isAuthenticated()">
+                <li><a href="/j_spring_security_logout">logout</a> </li>
+            </sec:authorize>
+        </ul>
+    </nav>
+
     <jsp:invoke fragment="yield"/>
     <jsp:invoke fragment="footer"/>
 </body>

@@ -1,6 +1,7 @@
 package com.haja.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 
 /**
  * Created by Lorenzo Goldoni on 19/05/15.
@@ -17,6 +18,7 @@ public class Supplier {
         @Basic
         private String name;
 
+        /*partita iva*/
         @Basic
         @Column(nullable = false)
         private String iva;
