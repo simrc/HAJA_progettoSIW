@@ -18,6 +18,10 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    /*nullable true per testare?*/
+    @ManyToOne
+    private User user;
+
     @Basic
     @Temporal(TemporalType.TIME)
     private Date creationDate;
@@ -31,7 +35,9 @@ public class Order {
     private Date evasionDate;
 
     @OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
+    @JoinColumn(name = "orders_id")
     private List<OrderLine> orderLines;
+
 
     public Long getId() {
         return id;
@@ -39,6 +45,14 @@ public class Order {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Date getCreationDate() {

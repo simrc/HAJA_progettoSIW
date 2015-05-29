@@ -24,7 +24,6 @@ public class UserController {
         model.addAttribute("user", new User());
         model.addAttribute("users", userRepository.findAll());
         return "userViews/index";
-
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)

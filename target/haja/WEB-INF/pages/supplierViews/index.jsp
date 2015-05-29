@@ -15,7 +15,6 @@
             <form:input path="iva"/>
 
             <form:label path="email">Email:</form:label>
-            <form:errors path="email"></form:errors>
             <form:input path="email"/>
 
             <form:label path="phone">Telefono:</form:label>

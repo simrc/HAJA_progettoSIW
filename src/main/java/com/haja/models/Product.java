@@ -3,6 +3,7 @@ package com.haja.models;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @NamedQuery(name = "Product.findAvailableProducts", query = "SELECT p FROM Product p WHERE p.quantity > 0")
 @Entity
@@ -30,6 +31,8 @@ public class Product {
     @NotNull
     private Integer quantity;
 
+    @ManyToMany(mappedBy = "products")
+    private List<Supplier> suppliers;
 
     public Long getId() {
         return id;
@@ -69,6 +72,14 @@ public class Product {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public List<Supplier> getSuppliers() {
+        return suppliers;
+    }
+
+    public void setSuppliers(List<Supplier> suppliers) {
+        this.suppliers = suppliers;
     }
 
 }

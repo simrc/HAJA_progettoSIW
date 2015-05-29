@@ -2,6 +2,7 @@ package com.haja.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
+import java.util.List;
 
 /**
  * Created by Lorenzo Goldoni on 19/05/15.
@@ -29,6 +30,9 @@ public class Supplier {
 
         @Basic
         private String phone;
+
+        @ManyToMany
+        private List<Product> products;
 
         public Long getId() {
                 return id;
@@ -68,6 +72,14 @@ public class Supplier {
 
         public void setPhone(String phone) {
                 this.phone = phone;
+        }
+
+        public List<Product> getProducts() {
+                return products;
+        }
+
+        public void setProducts(List<Product> products) {
+                this.products = products;
         }
 
 

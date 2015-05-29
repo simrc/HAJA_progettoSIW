@@ -7,6 +7,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class User {
@@ -40,14 +41,6 @@ public class User {
     @Column(unique = true , nullable = false)
     private String nickname;
 
-
-    /*
-    *
-    * AVATAR
-    *
-    * */
-
-
     @Basic
     @NotNull
     @Column(unique = true , nullable = false)
@@ -63,6 +56,18 @@ public class User {
     @Column(nullable = false)
     @Temporal(TemporalType.DATE)
     private Date registrationDate = new Date();
+
+    @OneToMany(mappedBy = "user")
+    private List<Order> orders;
+
+
+
+    /*
+    *
+    * AVATAR
+    *
+    * */
+
 
 
     public Long getId() {
@@ -149,4 +154,14 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
+
+
 }
