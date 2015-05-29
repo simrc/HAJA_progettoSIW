@@ -5,7 +5,7 @@
 <t:general>
 
 
-    <jsp:attribute name="title">Ebangla - login</jsp:attribute>
+    <jsp:attribute name="title">login</jsp:attribute>
 
 
     <jsp:attribute name="yield">
