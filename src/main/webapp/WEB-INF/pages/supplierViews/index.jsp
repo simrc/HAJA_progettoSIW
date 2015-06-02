@@ -11,7 +11,7 @@
             <form:label path="name">Nome:</form:label>
             <form:input path="name"/>
 
-            <form:label path="iva">Iva:</form:label>
+            <form:label path="iva">Partita IVA:</form:label>
             <form:input path="iva"/>
 
             <form:label path="email">Email:</form:label>

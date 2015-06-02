@@ -23,30 +23,28 @@ public class User {
 
     @Basic
     @NotNull
-    @Column(unique = true , nullable = false)
+    @Column(unique = true)
     private String password;
 
     @Basic
     @NotNull
-    @Column(nullable = false)
     private String firstName;
 
     @Basic
     @NotNull
-    @Column(nullable = false)
     private String lastName;
 
     @Basic
     @NotNull
-    @Column(unique = true , nullable = false)
+    @Column(unique = true)
     private String nickname;
 
     @Basic
     @NotNull
-    @Column(unique = true , nullable = false)
+    @Column(unique = true)
     private String email;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+    @OneToOne(cascade=CascadeType.ALL)
     private Address address;
 
     @Column(nullable = false)

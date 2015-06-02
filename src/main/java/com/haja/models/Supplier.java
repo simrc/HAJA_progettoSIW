@@ -1,6 +1,7 @@
 package com.haja.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import java.util.List;
 
@@ -17,15 +18,17 @@ public class Supplier {
 
         /*Non richiesto dalle specifiche ma è una proprietà utile all'utente finale*/
         @Basic
+        @NotNull(message = "campo necessario")
         private String name;
 
         /*partita iva*/
         @Basic
-        @Column(nullable = false)
+        @NotNull(message = "campo necessario")
         private String iva;
 
         @Basic
-        @Column(unique = true , nullable = false)
+        @NotNull(message = "campo necessario")
+        @Column(unique = true)
         private String email;
 
         @Basic

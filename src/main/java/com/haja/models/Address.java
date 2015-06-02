@@ -1,6 +1,7 @@
 package com.haja.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Address {
@@ -10,7 +11,16 @@ public class Address {
     private Long id;
 
     @Basic
-    private String city, cap, address_line;
+    @NotNull(message = "campo necessario")
+    private String city;
+
+    @Basic
+    @NotNull(message = "campo necessario")
+    private String cap;
+
+    @Basic
+    @NotNull(message = "campo necessario")
+    private String address_line;
 
     public Long getId() {
         return id;

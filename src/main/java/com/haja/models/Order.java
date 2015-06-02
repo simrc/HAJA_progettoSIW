@@ -34,7 +34,7 @@ public class Order {
     @Temporal(TemporalType.TIME)
     private Date evasionDate;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
+    @OneToMany(cascade=CascadeType.ALL)
     @JoinColumn(name = "orders_id")
     private List<OrderLine> orderLines;
 

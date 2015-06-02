@@ -14,8 +14,8 @@ public class Product {
     private Long id;
 
     @Basic
-    @Column(unique = true , nullable = false)
-    @NotNull
+    @Column(unique = true)
+    @NotNull(message = "campo necessario")
     private String name;
 
     @Basic
@@ -23,12 +23,12 @@ public class Product {
 
     @Basic
     @Min(value = 0)                 //da rivedere
-    @NotNull
-    @Column(unique = true , nullable = false)
+    @NotNull(message = "campo necessario")
+    @Column(unique = true)
     private Double price;
 
     @Basic
-    @NotNull
+    @NotNull(message = "campo necessario")
     private Integer quantity;
 
     @ManyToMany(mappedBy = "products")

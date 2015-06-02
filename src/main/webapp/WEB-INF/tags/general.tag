@@ -7,11 +7,13 @@
 
 <html>
 <head>
+
     <meta charset="utf-8">
     <title><jsp:invoke fragment="title"/></title>
 
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <jsp:invoke fragment="head"/>
 </head>
 
@@ -19,10 +21,11 @@
     <nav id="main-nav">
         <ul>
             <sec:authorize access="hasRole('ROLE_ADMIN')">
-                <li><a href="/">Welcome!</a></li>
+                <li><a href="/">HAJA</a></li>
                 <li><a href="/administrator/supplier">Fornitori</a></li>
                 <li><a href="/administrator/user">Utenti</a></li>
-                <li><a href="/administrator/product">I nostri prodotti</a></li>
+                <li><a href="/administrator/orders">Ordini </a></li>
+                <li><a href="/administrator/product">Prodotti</a></li>
             </sec:authorize>
         </ul>
     </nav>

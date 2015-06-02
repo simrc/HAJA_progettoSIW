@@ -1,6 +1,7 @@
 package com.haja.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by alessio on 19/05/15.
@@ -16,9 +17,11 @@ public class Admin {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @NotNull(message = "campo necessario")
     @Column(unique = true , nullable = false)
     private String username;
 
+    @NotNull(message = "campo necessario")
     @Column(nullable = false)
     private String password;
 

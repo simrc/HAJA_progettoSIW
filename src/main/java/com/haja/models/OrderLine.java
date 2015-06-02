@@ -16,7 +16,8 @@ public class OrderLine {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+    /*In realtà il prodotto dovrebbe essere noto al db prima della riga ordine (v. PERSIST)*/
+    @OneToOne(cascade={CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     private Product product;
 
     /*del prodotto*/
