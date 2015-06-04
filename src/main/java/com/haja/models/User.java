@@ -6,11 +6,12 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 @Entity
-public class User {
+public class User implements Serializable {
 
 
     @Id

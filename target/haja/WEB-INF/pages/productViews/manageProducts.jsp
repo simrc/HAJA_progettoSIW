@@ -30,6 +30,8 @@
           <form:label path="quantity">Quanit&#224</form:label>
           <form:input path="quantity"/>
 
+
+
           <input type="submit" value="inserisci">
 
         </form:form>

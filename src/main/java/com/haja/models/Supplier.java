@@ -3,6 +3,7 @@ package com.haja.models;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -10,7 +11,7 @@ import java.util.List;
  */
 
 @Entity
-public class Supplier {
+public class Supplier implements Serializable {
 
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)

@@ -2,6 +2,7 @@ package com.haja.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 /**
  * Created by alessio on 22/05/15.
@@ -10,7 +11,7 @@ import javax.validation.constraints.NotNull;
  */
 
 @Entity
-public class OrderLine {
+public class OrderLine implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

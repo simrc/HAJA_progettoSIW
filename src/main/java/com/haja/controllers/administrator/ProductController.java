@@ -2,6 +2,8 @@ package com.haja.controllers.administrator;
 
 import com.haja.models.Product;
 import com.haja.models.ProductRepository;
+import com.haja.models.Supplier;
+import com.haja.models.SupplierRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

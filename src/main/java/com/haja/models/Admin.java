@@ -2,6 +2,7 @@ package com.haja.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 /**
  * Created by alessio on 19/05/15.
@@ -11,7 +12,7 @@ import javax.validation.constraints.NotNull;
 
 /*Amminisratore*/
 @Entity
-public class Admin {
+public class Admin implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

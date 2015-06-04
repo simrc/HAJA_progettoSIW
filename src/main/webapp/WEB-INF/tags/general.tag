@@ -26,6 +26,7 @@
                 <li><a href="/administrator/user">Utenti</a></li>
                 <li><a href="/administrator/orders">Ordini </a></li>
                 <li><a href="/administrator/product">Prodotti</a></li>
+
             </sec:authorize>
         </ul>
     </nav>
