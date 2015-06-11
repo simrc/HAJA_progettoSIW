@@ -10,8 +10,11 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
-<t:general>
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+</head>
 
+<t:general>
 
   <jsp:attribute name="title">Catalogo Prodotti</jsp:attribute>
   <jsp:attribute name="yield">
@@ -32,7 +35,6 @@
                 <td>${product.name}</td>
                 <td>${product.description}</td>
                 <td>&euro; ${product.price}</td>
-                  ${product.quantity>0 ? "disponibile" : "al momento non è disponibile"}
                 <td>
                   <form action="/administrator/product/delete/${product.id}" method="post"><input type="submit" value="Rimuovi"/></form>
                 </td>

@@ -1,5 +1,6 @@
 package com.haja.models;
 
+import com.sun.javafx.scene.control.skin.VirtualFlow;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -18,7 +19,6 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    //TODO
     @Basic
     private String role = "ROLE_USER";
 
@@ -50,6 +50,7 @@ public class User implements Serializable {
 
     @Column(nullable = false)
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern="dd/MM/yyyy")
     private Date birthDate;
 
     @Column(nullable = false)

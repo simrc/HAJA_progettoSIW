@@ -1,6 +1,5 @@
 package com.haja.models;
 
-import javax.inject.Scope;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -11,6 +10,7 @@ import java.util.List;
  * Project: HAJA_progettoSIW
  * Package: com.haja.models
  */
+
 
 @Entity
 @Table(name = "orders")
@@ -26,7 +26,7 @@ public class Order implements Serializable {
 
     @Basic
     @Temporal(TemporalType.TIME)
-    private Date creationDate;
+    private Date creationDate = new java.util.Date();
 
     @Basic
     @Temporal(TemporalType.TIME)
