@@ -18,7 +18,10 @@
 
   <jsp:attribute name="title">Catalogo Prodotti</jsp:attribute>
   <jsp:attribute name="yield">
-
+     <head>
+         <div class="row">
+             <div class="box">
+                 <div class="col-lg-12">
         <c:if test="${!empty products}">
           <h3>Catalogo Prodotti</h3>
           <table>
@@ -43,7 +46,10 @@
             </tbody>
           </table>
         </c:if>
-
+     </div>
+    </div>
+    </div>
+    </head>
     </jsp:attribute>
 
 </t:general>

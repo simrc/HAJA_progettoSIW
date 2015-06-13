@@ -14,7 +14,10 @@
 
 
     <jsp:attribute name="yield">
-
+    <head>
+         <div class="row">
+             <div class="box">
+                 <div class="col-lg-12">
         <h1>Effettua il login</h1>
 
         <form name="f" id="form-data" action="/j_spring_security_check" method="POST">
@@ -27,6 +30,11 @@
 
             <input name="submit" type="submit">
         </form>
+
+        </div>
+        </div>
+        </div>
+        </head>
 
     </jsp:attribute>
 

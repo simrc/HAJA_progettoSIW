@@ -4,7 +4,10 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
 <head>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="<c:url value="../../../bootstrap/css/bootstrap.css" />" rel="stylesheet">
+    <script src="<c:url value="../../../bootstrap/js/min/jquery.sprintf-min.js" />"></script>
+    <script src="<c:url value="../../../bootstrap/js/bootstrap.js" />"></script>
 </head>
 
 <t:general>

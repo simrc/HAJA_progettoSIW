@@ -14,6 +14,10 @@
 
 
     <jsp:attribute name="yield">
+        <head>
+         <div class="row">
+             <div class="box">
+                 <div class="col-lg-12">
         <h3>I tuoti dati</h3>
             <tr>
                 <th><strong>Nome:</strong>
@@ -35,6 +39,10 @@
                     <form action="/" method="get"><input type="submit" class="btn btn-danger btn-mini" value="Home"/></form>
                 </th>
             </tr>
+        </div>
+        </div>
+        </div>
+        </head>
 
     </jsp:attribute>
 

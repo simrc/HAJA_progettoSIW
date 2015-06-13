@@ -82,5 +82,9 @@ public class Product implements Serializable {
     public void setSuppliers(List<Supplier> suppliers) {
         this.suppliers = suppliers;
     }
+    public void subQuantity(Integer quantity) {
+        this.quantity -= quantity;
+    }
+
 
 }

@@ -10,6 +10,10 @@
 <t:general>
     <jsp:attribute name="title">I nostri Fornitori</jsp:attribute>
     <jsp:attribute name="yield">
+        <head>
+         <div class="row">
+             <div class="box">
+                 <div class="col-lg-12">
         <form:form method="post" action="/administrator/supplier/add" commandName="supplier" class="form">
 
             <form:label path="name">Nome:</form:label>
@@ -57,6 +61,10 @@
               </tbody>
           </table>
       </c:if>
+        </div>
+        </div>
+        </div>
+        </head>
 
     </jsp:attribute>
 

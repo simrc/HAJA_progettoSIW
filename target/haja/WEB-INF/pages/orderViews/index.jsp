@@ -8,8 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+
+  <div class="row">
+    <div class="box">
+      <div class="col-lg-12">
     <title>ORDINI</title>
-</head>
+
 <body>
 
     <c:if test="${!empty orders}">
@@ -30,4 +34,9 @@
       </table>
     </c:if>
 </body>
+        </div>
+      </div>
+    </div>
+  </head>
+
 </html>
