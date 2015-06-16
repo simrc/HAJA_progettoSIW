@@ -30,13 +30,13 @@ public class SupplierController {
     public String listSupplier(ModelMap model) {
         model.addAttribute("supplier", new Supplier());
         model.addAttribute("suppliers", supplierRepository.findAll());
-        return "supplierViews/index";
+        return "supplierViews/supplier";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String addSupplier(@ModelAttribute("supplier") @Validated Supplier supplier, BindingResult result) {
         if (result.hasErrors())
-            return "supplierViews/index";
+            return "supplierViews/supplier";
         supplierRepository.save(supplier);
         return "redirect:/administrator/supplier";
     }

@@ -9,18 +9,23 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <head>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <t:general>
 
-
   <jsp:attribute name="title">Prodotti di Haja</jsp:attribute>
     <jsp:attribute name="yield">
+      <sec:authorize access="hasRole('ROLE_ADMIN')">
+      <head>
+         <div class="row">
+             <div class="box">
+                 <div class="col-lg-12">
 
-        <form:form method="post" action="/administrator/product/add" commandName="product">
+          <form:form method="post" action="/administrator/product/add" commandName="product">
 
           <form:label path="name">Nome:</form:label>
           <form:input path="name"/>
@@ -31,7 +36,7 @@
           <form:label path="price">Prezzo:</form:label>
           <form:input path="price"/>
 
-          <form:label path="quantity">Quanit&#224</form:label>
+          <form:label path="quantity">Quantit&#224:</form:label>
           <form:input path="quantity"/>
 
 
@@ -39,33 +44,48 @@
           <input type="submit" value="inserisci">
 
         </form:form>
-
+                 </div>
+             </div>
+         </div>
+      </head>
+      </sec:authorize>
+      <div class="row">
+      <div class="box">
+      <div class="col-lg-12">
     <c:if test="${!empty products}">
+
+
       <h3>Catalogo Prodotti</h3>
       <table>
         <thead>
         <tr>
           <th>Nome</th>
-          <th>Descrizione Prodotto</th>
-          <th>Prezzo</th>
-          <th>Disponibilit&agrave</th>
+          <th>&nbsp&nbspDescrizione prodotto&nbsp</th>
+          <th>&nbspPrezzo&nbsp&nbsp</th>
+          <th>&nbspDisponibilit&agrave</th>
         </tr>
         </thead>
         <tbody>
         <c:forEach items="${products}" var="product">
           <tr>
-            <td>${product.name}</td>
-            <td>${product.description}</td>
-            <td>&euro; ${product.price}</td>
-            <td>${product.quantity}</td>
+            <td>${product.name}&nbsp&nbsp</td>
+            <td>&nbsp&nbsp${product.description}&nbsp&nbsp</td>
+            <td>&nbsp&nbsp&euro; ${product.price}&nbsp&nbsp</td>
+            <td>&nbsp&nbsp${product.quantity}</td>
+            <sec:authorize access="hasRole('ROLE_ADMIN')">
             <td>
               <form action="/administrator/product/delete/${product.id}" method="post"><input type="submit" value="Rimuovi"/></form>
             </td>
+            </sec:authorize>
           </tr>
         </c:forEach>
         </tbody>
       </table>
     </c:if>
+   </div>
+      </div>
+      </div>
+
 
     </jsp:attribute>
 

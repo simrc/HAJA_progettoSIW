@@ -28,7 +28,7 @@
             <form:label path="lastName">Cognome:</form:label>
             <form:input path="lastName"/>
 
-            <form:label path="email">Email:</form:label>
+            <form:label path="email">E-mail:</form:label>
             <form:input path="email"/>
 
             <form:label path="password">Password</form:label>
@@ -52,6 +52,7 @@
                  </div>
              </div>
          </div>
+
      </head>
     </jsp:attribute>
 

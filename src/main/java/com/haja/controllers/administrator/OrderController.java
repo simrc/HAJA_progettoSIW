@@ -35,14 +35,14 @@ public class OrderController {
          @RequestMapping(method = RequestMethod.POST)
          public String addOrder(@ModelAttribute("order") Order order, BindingResult result) {
            orderRepository.save(order);
-         return "redirect:/admin/order";
+         return "redirect:/administrator/order";
          }
 
         @RequestMapping(method = RequestMethod.GET)
         public String addOrder (ModelMap model) {
             model.addAttribute("order", new Order());
             model.addAttribute("orders", orderRepository.findAll());
-            return "admin/order";
+            return "administrator/order";
         }
 
 
@@ -50,7 +50,7 @@ public class OrderController {
         @RequestMapping("/delete/{orderId}")
         public String deleteOrder(@PathVariable("orderId") Long orderId) {
             orderRepository.delete(orderRepository.findOne(orderId));
-            return "redirect:/admin/order";
+            return "redirect:/administrator/order";
         }
 
 
@@ -64,7 +64,7 @@ public class OrderController {
                 total += orderLine.getPrice();
             }
             model.addAttribute("total", total);
-            return "admin/orderDetails";
+            return "administrator/orderDetails";
         }
 
         @RequestMapping("/evadi/{orderId}")
@@ -78,7 +78,7 @@ public class OrderController {
             productRepository.save(p);
          }
          orderRepository.save(o);
-         return "redirect:/admin/order";
+         return "redirect:/administrator/order";
     }
 
     }

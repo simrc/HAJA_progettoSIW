@@ -23,7 +23,7 @@ public class UserController {
     public String listUsers(ModelMap model) {
         model.addAttribute("user", new User());
         model.addAttribute("users", userRepository.findAll());
-        return "userViews/index";
+        return "adminViews/clienti";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)

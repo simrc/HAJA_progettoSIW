@@ -1,6 +1,5 @@
 package com.haja.controllers.customer;
 
-import com.haja.models.Product;
 import com.haja.models.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,6 +22,6 @@ public class CatalogueController {
     @RequestMapping(method = RequestMethod.GET)
     public String listProduct(ModelMap model) {
         model.addAttribute("products", productRepository.findAvailableProducts()); //namedQuery in Product
-        return "productViews/index";
+        return "homePage";
     }
 }
